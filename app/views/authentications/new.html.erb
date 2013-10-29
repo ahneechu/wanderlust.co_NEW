@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign In') %>
+
+<h1>Sign In</h1>
+
+
+  
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      
+      <%= f.label :email %>
+	    <%= f.text_field :email %>
+      
+
+	    <%= f.label :password %>
+	    <%= f.password_field :password %>
+
+	   <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+     <% end %>
+  
+
+
+<%# form_for @user, {url:"/authentications", method:"post"} do |u| %>
+<!-- <br />
+<br />
+<br />
+
+
+<%# u.label :email, "Email" %>
+<%# u.text_field :email %>
+
+<%# u.label :password, "Password" %>
+<%# u.text_field :password %>
+
+<%# u.submit "Sign in" %>
+
+<br />
+<br />
+<br />
+
+
+<%#end %>
+
+</div> -->
