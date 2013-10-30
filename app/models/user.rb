@@ -10,6 +10,8 @@ class User
 	field :email, type: String
 	field :salt, type: String
 	field :hashed_password, type: String
+	# field :mentors, type: String
+	# field :learners, type: String
 	
 
 	before_save :hash_password

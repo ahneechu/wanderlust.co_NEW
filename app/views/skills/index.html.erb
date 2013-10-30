@@ -4,20 +4,33 @@
 
 <h1>i got skills!</h1>
 
+<!-- i want to list the skills based on category -->
+<!-- how to link the category id with skill id -->
+<!-- do i need to put it in a partial? -->
+
+	<div>
+		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
+												prompt: 'Please select a category') %>
+	</div>
+
+
 <table class="table table-hover">
 	<tr>
-		<!-- <th>CATEGORY</th> -->
-		<!-- <th></th>
-		<th></th> -->
-		<th>SKILLS</th>
-		<th>REMOVE</th>
+		<th>Skills</th>
+		<th>Edit</th>
+		<th>Remove</th>
 	</tr>
 
 
 <% @skills.each do |s| %>
 	<tr>
 		<td><%= s.skill_name %></td>
-		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myButton"} %></td>
+		<!-- i still need to link edit btn with edit html -->
+		<td><%= button_to "Edit", { action: "edit", id: s.id}, {method: :edit, :class => "myBtn"} %></td>
+		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myBtn"} %></td>
+		
+
+		<!-- <td><%# link_to 'Edit', edit_skill_path %></td> -->
 	</tr>
 
 	<% end %>

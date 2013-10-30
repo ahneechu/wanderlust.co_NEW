@@ -36,30 +36,3 @@ class CategoriesController < ApplicationController
 		redirect_to categories_url
 	end
 end
-
-def create #new 
-    @category = Category.new(category_params)
-
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Skill was successfully created.' }
-        # format.json { render action: 'show', status: :created, location: @skill }
-      else
-        format.html { render action: 'new' }
-        # format.json { render json: @skill.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
-  def update #new
-    respond_to do |format|
-      if @skill.update(skill_params)
-        format.html { redirect_to @skill, notice: 'Item was successfully updated.' }
-        # format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        # format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
-  end

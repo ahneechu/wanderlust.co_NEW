@@ -1,8 +1,8 @@
-<% provide(:title, 'New skills') %>
+<% provide(:title, 'Edit skills') %>
 
 <div class="form_container">
 
-	<h1>New Skill Form</h1>
+	<h1>Edit Skills</h1>
 
 	<%= form_for @skill do |f| %>
 
@@ -11,18 +11,22 @@
 												prompt: 'Please select a category') %>
 	</p>
 
-	<p>
+
+	<p> 
+		<!-- this needs to show the skill_name that you are editing -->
 		<%= f.label :skill_name, "Skill" %><br />
 		<%= f.text_field :skill_name %>
 	</p>
 
 	<p>
+	<!-- this field needs to update the skill info -->
 		<%= f.label :skill_description, "Skill Description" %><br />
 		<%= f.text_area :skill_description %>
 	</p>
 
 	<p>
-		<%= f.submit %>	
+		<!-- this needs to update the skill -->
+		<%= f.submit, "Update" %>	
 	</p>
 
 	<% end %>

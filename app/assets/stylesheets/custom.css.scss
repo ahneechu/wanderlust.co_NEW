@@ -10,25 +10,26 @@
   overflow-y: scroll;
 }*/
 
-/*body {
-  padding-top: 60px;
-}*/
+body {
+  background-color: black;
+  /*padding-top: 60px;*/
+}
 
 /*section {
   overflow: auto;
 }*/
 
-/*textarea {
+textarea {
   resize: vertical;
-}*/
+}
 
-/*.center {
+.center {
   text-align: center;
   h1 {
     margin-bottom: 10px;
   }
 }
-*/
+
 
 .myBtn{
   width: 100px;
@@ -118,7 +119,8 @@ footer {
   a {
     color: #555;
     &:hover {
-      color: #222;
+      color: white;
+      text-decoration: none;
     }
   }
   small {
@@ -177,7 +179,7 @@ input {
   background-color: #eee;
   border: 1px solid gray;
   margin: 20px auto;
-  width: 500px;
+  width: 900px;
   padding: 10px;
   color: gray;
 }
