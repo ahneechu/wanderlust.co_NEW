@@ -1,10 +1,12 @@
 <% provide(:title, @user.name) %>
+
 <div class="form_container row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+
+<% if current_user %>
+<h1> Welcome <%= @user.email %></h1>
+      
+<div>Include skills activity</div>
+
+<% end %>
+
 </div>

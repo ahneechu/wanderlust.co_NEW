@@ -6,7 +6,7 @@ class AuthenticationsController < ApplicationController
 	def new
 		# are they already logged in?
 		if current_user #they are!  can't create them again
-			redirect_to root_path
+			redirect_to user
 		else
 			@user = User.new
 
@@ -19,13 +19,13 @@ class AuthenticationsController < ApplicationController
 			user = User.find_by(email: params[:user][:email])
 		# if user
 		if user != nil
-			#authenticate user
+			#authenticate user and then redirect them to user profile page
 			if user.authenticate(params[:user][:password])
 				session[:user_id] = user.id
-				redirect_to root_url
+				redirect_to user
 			end
 		else
-			# flash.now.alert = "Unable to sign you in."
+			flash.now[:error] = "Unable to sign you in."
 			# render :new
 			redirect_to new_user_path
 		end

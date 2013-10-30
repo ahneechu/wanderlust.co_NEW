@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
   def create
 	@user = User.create(params[:user].permit(:email, :password, :password_confirmation))
-	redirect_to root_path  #this redirects to homepage -- but this should redirect to signed_in homepage!
+
+  user = User.find_by(email: params[:user][:email])
+	 if user.authenticate(params[:user][:password])
+        session[:user_id] = user.id
+        redirect_to user
+    end
   end
 
   
