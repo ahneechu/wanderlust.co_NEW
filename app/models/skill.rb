@@ -1,6 +1,8 @@
 class Skill
 	include Mongoid::Document
 
+	attr_accessor :m_or_l, :notes, :bio, :objectives, :goals
+
 	field :skill_name, type: String
 	field :skill_description, type: String
 

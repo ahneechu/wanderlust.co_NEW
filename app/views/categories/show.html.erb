@@ -1,31 +1,111 @@
-<% provide(:title, @category.category_name) %>
+<% provide(:title, 'All skills') %>
 
 <div class="form_container">
 
-	<h1><%= @category.category_name %></h1>
+<h1><%=@category.category_name %></h1>
+
+<!-- i want to list the skills based on category -->
+<!-- how to link the category id with skill id -->
+<!-- do i need to put it in a partial? -->
+
+	<div>
+		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
+												prompt: 'Please select a category') %>
+	</div>
 
 
-	
-	<% @category.skills.each do |s| %>
-		<div><%= s.skill_name %></div>
-	
+<table class="table table-hover">
+	<tr>
+		<th>Skills</th>
+		<th>Edit</th>
+		<th>Remove</th>
+	</tr>
+
+
+<% @category.skills.each do |s| %>
+	<tr>
+		<td><%= s.skill_name %></td>
+		<!-- i still need to link edit btn with edit html -->
+		<td><%= button_to "Edit", { action: "edit", id: s.id}, {method: :edit, :class => "myBtn"} %></td>
+		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myBtn"} %></td>
+		
+
+		<!-- <td><%# link_to 'Edit', edit_skill_path %></td> -->
+	</tr>
 
 	<% end %>
 
+	</tbody>
+</table>
+
 </div>
 
-<!-- create a form to show each skills in each category -->
+
+<div class="form_container">
+
+	<h1>New Skill Form</h1>
+
+	<%= form_for @skill, {url: '/skills', method: 'post'} do |f| %>
+
+	<p>
+		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
+												prompt: 'Please select a category') %>
+	</p>
+
+	<p>
+		<%= f.label :skill_name, "Skill" %><br />
+		<%= f.text_field :skill_name %>
+	</p>
+
+	<p>
+		<%= f.label :skill_description, "Skill Description" %><br />
+		<%= f.text_area :skill_description %>
+	</p>
+
+	<p>
+		<%= f.label :mentors, "I want to be a mentor"%>
+		<%= f.radio_button :m_or_l, "mentor" %>
+	</p>
+
+	<p>
+		<%= f.label :learners, "I want to be a learner"%>
+		<%= f.radio_button :m_or_l, "learner" %>
+	</p>
+
+	<p>
+		<%= f.submit %>	
+	</p>
+
+	<% end %>
 
 
-<%#form_for @categories do |c| %>
 
-<!-- <p>
-<%# collection_select(:category, :skill_id, Skill.all, :id, :skill_name, prompt: true) %>
-</p>
+</div>
 
-<p>
+
+
+
+
+
+
+
+
+
+
+
+<%#provide(:title, @category.category_name) %>
+
+<!-- <div class="form_container"> -->
+
+	<!-- <h1><%# @category.category_name %></h1> -->
+
+
+	
 	<%#@category.skills.each do |s| %>
-	<div><%# s.skill_name %></div>
-</p> -->
+		<!-- <div><%# s.skill_name %></div> -->
+	
 
-<%# c.submit %>
+	<%#end %>
+
+<!-- </div> -->
+

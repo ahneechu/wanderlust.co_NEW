@@ -1,0 +1,28 @@
+
+
+
+<p>
+<%= u.label :location, "Location" %>
+<%= u.text_field :location, class: "form-control", placeholder: "Location" %>
+</p>
+
+<p>
+<%= u.label :language, "Language" %>
+<%= u.text_field :language, class: "form-control", placeholder: "Language" %>
+</p>
+
+<p>
+<%= u.label :interest, "Interest" %>
+<%= u.text_field :interest, class: "form-control", placeholder: "Interest" %>
+</p>
+
+<p>
+<%= user.label :mentors, "I want to be a mentor"%>
+<%= user.check_box :mentors, {}, "true", "false" %>
+</p>
+
+<p>
+<%= user.label :learners, "I want to be a learner"%>
+<%= user.check_box :learners, {}, "true", "false" %>
+</p>
+	  

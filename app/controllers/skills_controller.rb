@@ -14,7 +14,18 @@ class SkillsController < ApplicationController
 
 	def create
 		@skill = Skill.create(params[:skill].permit(:skill_name, :category_id, :skill_description))
-		redirect_to :action => "show", :id =>@skill._id
+		if params[:skill][:m_or_l] == 'mentor'
+
+		m = @skill.mentors.new(:notes => params[:skill][:notes], :bio => params[:skill][:bio])
+		m.user = current_user
+		m.save
+	else
+		l = @skill.learners.new(:notes => params[:skill][:notes], :objectives => params[:skill][:objectives], :goals => params[:skill][:goals])
+		l.user = current_user
+		l.save
+	end
+
+		redirect_to :controller => 'categories', :action => 'show', :id => params[:skill][:category_id]
 	end
 
 	def edit

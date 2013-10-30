@@ -22,9 +22,14 @@
 	<% c.skills.each do |s|%>	
 		<td></td>
 		<td><%=s.skill_name %></td>
+		<td><%= link_to 'Show', s %></td>
+        <td><%# link_to 'Edit', edit_skill_path(skill) %></td>
+        <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
 		<!-- i still need to link edit btn with edit html -->
-		<td><%= button_to "Edit", { action: "edit", id: s.id}, {method: :edit, :class => "myBtn"} %></td>
-		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myBtn"} %></td>
+		<td><%# button_to "Edit", { action: "edit", id: s.id}, {method: :edit, :class => "myBtn"} %></td>
+		<td><%# button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myBtn"} %></td>
 </tr>
 
 	<% end %>

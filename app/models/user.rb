@@ -10,8 +10,13 @@ class User
 	field :email, type: String
 	field :salt, type: String
 	field :hashed_password, type: String
-	# field :mentors, type: String
-	# field :learners, type: String
+
+	field :location, type: String
+	field :language, type: String
+	field :interest, type: String
+
+	field :mentors, type: Boolean
+	field :learners, type: Boolean
 	
 
 	before_save :hash_password

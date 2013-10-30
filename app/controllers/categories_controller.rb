@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-	before_action :set_item, only: [:show, :edit, :update, :destroy]
+	# before_action :set_item, only: [:show, :edit, :update, :destroy]
 
 	# def index #new
 		# @show_hidden = params[:show_hidden]
@@ -21,10 +21,11 @@ class CategoriesController < ApplicationController
 
 	def show
 		@category = Category.find(params[:id])
-		puts "*" * 100
-		puts @category
-		# @skill = @category.skills.new
+		
+		@skill = @category.skills.new
 	end
+
+	
 
 	# def create
 	# 	@category = Category.create(params[:category].permit(:category_name))
