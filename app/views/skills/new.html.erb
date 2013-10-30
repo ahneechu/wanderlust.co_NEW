@@ -11,6 +11,10 @@
 	</p> -->
 
 	<p>
+		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
+	</p>
+
+	<p>
 		<%= f.label :skill_name, "Skill" %>
 		<%= f.text_field :skill_name %>
 
