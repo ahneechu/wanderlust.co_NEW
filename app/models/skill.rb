@@ -5,8 +5,8 @@ class Skill
 	field :skill_description, type: String
 
 
-	# has_many :learners
-	# has_many :mentors
+	has_many :learners
+	has_many :mentors
 	belongs_to :category
 
 

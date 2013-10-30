@@ -1,0 +1,37 @@
+<% provide(:title, 'All mentors') %>
+
+<div class = "container">
+
+<% if current_user %>
+	You're logged in as <%= current_user.email %>
+<% end %>
+<br />
+
+<table>
+<%# form_tag :action => "update" do %>
+	<% @mentors.each do |m| %>
+	 <tr>
+		<td rowspan="2">
+			<% if current_user %>
+				<%= check_box_tag "grp"+m.id, "Y", m.musers.include?(current_user) %>
+			<% end %>
+		</td>
+		<td><%= link_to m.name, m %></td>
+	 </tr>
+	 <tr>
+		 <td><%= m.specialty %></td>
+	 </tr>
+	<% end %>
+</table>
+
+	<%= button_to "Update mentors", mentors_url, method: :put %>
+<%# end %>
+<hr />
+
+Create a new group:
+<%= form_for @mentor do |newM| %>
+	<%= newM.text_field :name %><br />
+	<%= newM.text_area :specialty, cols:"30", rows:"10" %><br />
+	<%= newM.submit "Create this group!" %>
+<% end %>
+</div>

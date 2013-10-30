@@ -1,0 +1,13 @@
+<% provide(:title, @mentor.name) %>
+
+<b><%= @mentor.name %></b><br />
+
+<% @mentor.musers.each do |u| %>
+ <%= u.email %>
+ 	<% if u.email == current_user.email %>
+ 		<%= " It's me!!!!" %>
+ 	<% end %>
+ 	<%= x = 5 %>
+ <br />
+<% end %>
+

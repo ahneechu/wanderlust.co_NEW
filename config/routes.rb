@@ -3,6 +3,10 @@ NewProject::Application.routes.draw do
   resources :authentications, only: [:new, :create, :destroy]
   resources :skills
   resources :categories
+  resources :mentors
+  resources :learners
+
+
   root  'static_pages#home'
   match '/signup',  to: 'users#new',                via: 'get'
   match '/signin',  to: 'authentications#new',      via: 'get'

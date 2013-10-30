@@ -34,5 +34,7 @@ class User
 		end
 	end
 
-	
+	has_many :mentors
+	has_many :learners
+	has_many :skills
 end
