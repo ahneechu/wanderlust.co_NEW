@@ -1,0 +1,33 @@
+
+
+<%= form_for Category.new, {url:"/category/show", method:"get"} do |u| %>
+<% end %>
+
+
+<%= form_for Skill.new, {url:"/skills/new", method:"post"} do |u| %>
+
+<%= f.label :skill_name, "Skill" %>
+<%= f.text_field :skill_name %>
+
+
+<%= f.label :skill_description, "Skill" %>
+<%= f.text_field :skill_description %>
+
+
+
+
+
+
+<%# u.label :email, "Email" %>
+<%# u.text_field :email, type: "email", placeholder: "Email" %>
+
+<%# u.label :password, "Password" %>
+<%# u.text_field :password, type: "password", placeholder: "Password" %>
+
+
+<%= u.submit "Submit" %>
+
+
+
+
+<% end %>

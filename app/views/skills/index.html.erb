@@ -1,0 +1,28 @@
+<% provide(:title, 'All skills') %>
+
+<div class="form_container">
+
+<h1>i got skills!</h1>
+
+<table class="table table-hover">
+	<tr>
+		<!-- <th>CATEGORY</th> -->
+		<!-- <th></th>
+		<th></th> -->
+		<th>SKILLS</th>
+		<th>REMOVE</th>
+	</tr>
+
+
+<% @skills.each do |s| %>
+	<tr>
+		<td><%= s.skill_name %></td>
+		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myButton"} %></td>
+	</tr>
+
+	<% end %>
+
+	</tbody>
+</table>
+
+</div>
