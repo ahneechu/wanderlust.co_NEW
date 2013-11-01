@@ -25,6 +25,10 @@ class CategoriesController < ApplicationController
 		@skill = @category.skills.new
 	end
 
+	# test 
+	# def reloadindex
+ #  		redirect_to categories_path({:category => params[:id]})
+	# end
 	
 
 	# def create

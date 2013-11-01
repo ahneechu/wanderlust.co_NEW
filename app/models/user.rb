@@ -14,9 +14,6 @@ class User
 	field :location, type: String
 	field :language, type: String
 	field :interest, type: String
-
-	field :mentors, type: Boolean
-	field :learners, type: Boolean
 	
 
 	before_save :hash_password

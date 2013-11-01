@@ -1,13 +1,6 @@
-<% provide(:title, @mentor.name) %>
+<% provide(:title, @mentor.skills) %>
 
-<b><%= @mentor.name %></b><br />
-
-<% @mentor.musers.each do |u| %>
- <%= u.email %>
- 	<% if u.email == current_user.email %>
- 		<%= " It's me!!!!" %>
- 	<% end %>
- 	<%= x = 5 %>
- <br />
-<% end %>
+<div class= "form_controller">
+<%= @mentor.skills %>
+</div>
 

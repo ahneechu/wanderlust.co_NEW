@@ -7,6 +7,22 @@
       
 <div>Include skills activity</div>
 
+
+<div class="profile_container">
+<h3>Skills I'm Teaching</h3>
+<% @user.mentors.each do |m| %>
+	<%= m.skill.skill_name %> <br />
+<% end %>
+</div>
+
+
+<div class="profile_container">
+<h3>Skills I'm Learning</h3>
+<% @user.learners.each do |l| %>
+	<%= l.skill.skill_name %> <br />
+<% end %>
+</div>
+
 <% end %>
 
 </div>

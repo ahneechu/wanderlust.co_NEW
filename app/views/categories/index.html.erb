@@ -8,8 +8,9 @@
 <table class="table table-hover">
 
 <tr>
-	<th>Category</th>
+	<th colspan="2">Category</th>
 	<th>Skills</th>
+	<th>Show</th>
 	<th>Edit</th>
 	<th>Remove</th>
 </tr>
@@ -17,13 +18,16 @@
 
 <% @categories.each do |c| %>
 <tr>
-	<td><%= c.category_name %></td><br />
-
-	<% c.skills.each do |s|%>	
-		<td></td>
+	<td colspan="2"><%= c.category_name %></td><br />
+		<td></td><td></td><td></td><td></td></tr>
+	<% c.skills.each do |s|%>
+	<tr>
+		<td></td><td></td>	
 		<td><%=s.skill_name %></td>
 		<td><%= link_to 'Show', s %></td>
-        <td><%# link_to 'Edit', edit_skill_path(skill) %></td>
+        <td><%= link_to 'Edit', {controller: "skills", action:"update", id:s.id}, {method: :update} %></td>
+        <td><%= link_to 'Delete', {controller: "skills", action:"destroy", id:s.id}, 
+        {method: :delete} %></td>
         <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 

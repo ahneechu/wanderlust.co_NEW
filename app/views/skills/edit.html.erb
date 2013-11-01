@@ -4,12 +4,12 @@
 
 	<h1>Edit Skills</h1>
 
-	<%= form_for @skill do |f| %>
+	<%= form_for :skill do |f| %>
 
-	<p>
-		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
+	<!-- <p> -->
+		<%#collection_select(:skill, :category_id, Category.all, :id, :category_name, 
 												prompt: 'Please select a category') %>
-	</p>
+	<!-- </p> -->
 
 
 	<p> 
@@ -26,7 +26,7 @@
 
 	<p>
 		<!-- this needs to update the skill -->
-		<%= f.submit, "Update" %>	
+		<%= f.submit "Update" %>	
 	</p>
 
 	<% end %>

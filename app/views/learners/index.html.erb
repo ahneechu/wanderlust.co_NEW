@@ -1,14 +1,14 @@
-<% provide(:title, 'All Mentors') %>
+<% provide(:title, 'All Learners') %>
 
 <div class="form_container">
 
-<h1>Mentors and Skills</h1>
+<h1>Learners and Skills</h1>
 
 	
 <table class="table table-hover">
 
 <tr>
-	<th colspan="2">Mentor</th>
+	<th colspan="2">Learner</th>
 	<th>Skills</th>
 	<!-- <th>Show</th>
 	<th>Edit</th>
@@ -16,11 +16,11 @@
 </tr>
 
 
-<% @mentors.each do |m| %>
+<% @learners.each do |l| %>
 <tr>
-	<td colspan="2"><%= m.user.email %></td><br />
+	<td colspan="2"><%= l.user.email %></td><br />
 
-		<td><%= m.skill.skill_name %></td>
+		<td><%= l.skill.skill_name %></td>
 		<td><%# link_to 'Show', s %></td>
         <td><%# link_to 'Edit', edit_skill_path(skill) %></td>
         <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
