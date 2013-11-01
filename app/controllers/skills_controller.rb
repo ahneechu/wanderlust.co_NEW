@@ -10,6 +10,9 @@ class SkillsController < ApplicationController
 
 	def show
 		@skill = Skill.find(params[:id])
+		# i dont know if this really works
+		@mentor = Skill.mentor.find(params[:skill])
+		@learner = Skill.learner.find(params[:skill])
 	end
 
 	def create

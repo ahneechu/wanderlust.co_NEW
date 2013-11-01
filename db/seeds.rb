@@ -25,29 +25,32 @@ as = Category.create(category_name: 'Academic Skills')
 ls = Category.create(category_name: 'Life Skills')
 
 
-bss = bs.skills.create(skill_name: 'Sales')
-bsm = bs.skills.create(skill_name: 'Marketing')
-bsl = bs.skills.create(skill_name: 'Legal')
-bsp = bs.skills.create(skill_name: 'Presentation Techniques')
+bsm = bs.skills.create(skill_name: 'Marketing') 
+bsc = bs.skills.create(skill_name: 'Contracts') 
+bsp = bs.skills.create(skill_name: 'Presentation Techniques') 
 
 
-lss = ls.skills.create(skill_name: 'Sewing')
-lsc = ls.skills.create(skill_name: 'Cooking')
-lsj = ls.skills.create(skill_name: 'Jewelry Making')
-lsp = ls.skills.create(skill_name: 'Photography')
+lss = ls.skills.create(skill_name: 'Sewing') 
+lsc = ls.skills.create(skill_name: 'Cooking') 
+lsj = ls.skills.create(skill_name: 'Jewelry Making') 
+lsp = ls.skills.create(skill_name: 'Photography') 
 
 
 ase = as.skills.create(skill_name: 'English')
-asm = as.skills.create(skill_name: 'Math')
+asm = as.skills.create(skill_name: 'Math') 
 asc = as.skills.create(skill_name: 'Computer Training')
-asg = as.skills.create(skill_name: 'GED Tutoring')
 
-ma = Mentor.create(user:ua, skill:bsm, notes: 'i am a marketing pro!')
+ma = Mentor.create(user:ua, skill:bsm, notes: 'i am a marketing pro! learn how to market yourself to get your dream job!')
 mb = Mentor.create(user:ub, skill:lss, notes: 'i love sewing')
-mc = Mentor.create(user:uc, skill:bsl, notes: 'i can teach you all about reading contracts')
+mc = Mentor.create(user:uc, skill:bsc, notes: 'i can teach you all about reading contracts')
+md = Mentor.create(user:ub, skill:bsp, notes: 'learn how to make fun presentations')
+me = Mentor.create(user:uc, skill:bsp, notes: 'i can show you some cool Photography tricks')
 
 la = Learner.create(user:ua, skill:lsj, notes: 'i so interested in jewelry making!')
 lb = Learner.create(user:ud, skill:bsm, notes: 'i want to learn marketing')
 lc = Learner.create(user:ue, skill:asm, notes: 'i need help with my math homework')
 ld = Learner.create(user:uf, skill:lsc, notes: 'i want to learn how to make a holiday meal')
+le = Learner.create(user:ub, skill:lsc, notes: 'i want to learn how to bake a pie')
+lf = Learner.create(user:uf, skill:asc, notes: 'i want to improve in my ms office skills')
+lg = Learner.create(user:ud, skill:ase, notes: 'i like to improve in my English')
 

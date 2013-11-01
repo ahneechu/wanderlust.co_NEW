@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # i dont know if this works
+    # @mentor = User.mentor.find_by(params[:user])
+    # @learner = User.learner.find_by(params[:user])
   end
 
   def new
