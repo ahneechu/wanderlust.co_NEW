@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
-
-    
   end
 
   def new
@@ -20,6 +22,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user].permit(:user_name, :user_email, :user_password, :user_password_confirmation))
+      redirect_to action: 'show', id: @user
+    else
+      render 'edit'
+    end
+  end
   
 
 

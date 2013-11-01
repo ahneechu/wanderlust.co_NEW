@@ -34,7 +34,7 @@ class AuthenticationsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to help_path
+		redirect_to logout_path
 		
 	end
 

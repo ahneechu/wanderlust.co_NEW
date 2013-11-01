@@ -25,6 +25,8 @@
       <li><%= current_user.email %></li>
       <li><%= button_to "logout", "/authentications/_", method: "delete" %></li>
       <li><%= link_to "Profile", current_user %></li>
+      <li><%= link_to "Mentors", mentors_path %></li>
+      <li><%= link_to "Learners", learners_path %></li>
   
     </div>
                      

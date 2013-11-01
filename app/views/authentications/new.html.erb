@@ -1,17 +1,12 @@
 <% provide(:title, 'Sign In') %>
 
 <h1>Sign In</h1>
-
-
   
     <%= form_for(@user) do |f| %>
-      <%# render 'shared/error_messages' %>
-
-      
-      <%= f.label :email %>
+   
+      	<%= f.label :email %>
 	    <%= f.text_field :email %>
       
-
 	    <%= f.label :password %>
 	    <%= f.password_field :password %>
 

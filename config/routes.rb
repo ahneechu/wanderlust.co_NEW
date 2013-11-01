@@ -11,6 +11,7 @@ NewProject::Application.routes.draw do
   match '/signup',  to: 'users#new',                via: 'get'
   match '/signin',  to: 'authentications#new',      via: 'get'
   # match '/skills/:id/edit', to: 'skills#update',     via: 'post'
+  match '/logout',  to: 'static_pages#logout',      via: 'get'
   match '/signout', to: 'authentications#destroy',  via: 'delete'
   match '/help',    to: 'static_pages#help',        via: 'get'
   match '/about',   to: 'static_pages#about',       via: 'get'
