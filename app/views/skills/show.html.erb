@@ -2,16 +2,17 @@
 
 <div class = "form_container">
 
-<p>
-	<%= @skill.skill_name %>
-</p>
 
-<p>
-	<%= @skill.skill_description %>
-</p>
+<h3>Skill Name</h3>
+<p><%= @skill.skill_name %></p>
+
+<h3>Skill Description</h3>
+<p><%= @skill.skill_description %></p>
 
 <p>
 	<!-- how do i show mentors and learners? -->
 </p>
+
+<p><%= link_to 'back', skills_path %></p>
 
 </div>

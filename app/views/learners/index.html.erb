@@ -8,7 +8,7 @@
 <table class="table table-hover">
 
 <tr>
-	<th colspan="2">Learner</th>
+	<th colspan="2">Learners</th>
 	<th>Skills</th>
 	<!-- <th>Show</th>
 	<th>Edit</th>
@@ -18,7 +18,7 @@
 
 <% @learners.each do |l| %>
 <tr>
-	<td colspan="2"><%= l.user.email %></td><br />
+	<td colspan="2"><%= link_to l.user.email, l %></td><br />
 
 		<td><%= l.skill.skill_name %></td>
 		<td><%# link_to 'Show', s %></td>

@@ -2,9 +2,21 @@
 
 <div class= "form_container">
 
-<%= @mentor.skill.skill_name %>
-<%= @mentor.skill.skill_description %>
-<%= @mentor.notes %>
+<h3>Mentor Name</h3>
+<p><%= @mentor.user.email %></p>
+
+<h3>Skill Name</h3>
+<p><%= @mentor.skill.skill_name %></p>
+
+<h3>Skill Description</h3>
+<p><%= @mentor.skill.skill_description %></p>
+
+<h3>Mentor Notes</h3>
+<p><%= @mentor.notes %></p>
+
+<p><%= link_to 'back', mentors_path %></p>
 
 </div>
+
+
 
