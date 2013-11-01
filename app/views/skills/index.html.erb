@@ -8,11 +8,10 @@
 <!-- how to link the category id with skill id -->
 <!-- do i need to put it in a partial? -->
 
-	<div>
-		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
-												prompt: 'Please select a category') %>
+	<!-- <div>
+		<%#collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
 	</div>
-
+ -->
 
 <table class="table table-hover">
 	<tr>
@@ -27,9 +26,11 @@
 	<tr>
 		<td><%= s.skill_name %></td>
 		<!-- i still need to link edit btn with edit html -->
-		<td><%= link_to 'Show', s %></td>
-		<td><%= link_to "Edit", { action: "update", id: s.id}, {method: :update, :class => "myBtn"} %></td>
-		<td><%= button_to "delete", { action: "destroy", id: s.id}, {method: :delete, data:{confirm: "Are you sure?"}, :class => "myBtn"} %></td>
+		<td><%= link_to "Show", s %></td>
+		<td><%= link_to "Edit", { action: "edit", id: s.id}, 
+		{method: :get} %></td>
+		<td><%= link_to "Delete", { action: "destroy", id: s.id}, 
+		{method: :delete, data:{confirm: "Are you sure?"}} %></td>
 		
 
 		<!-- <td><%# link_to 'Edit', edit_skill_path %></td> -->

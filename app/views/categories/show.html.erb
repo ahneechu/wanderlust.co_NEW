@@ -9,8 +9,7 @@
 <!-- do i need to put it in a partial? -->
 
 	<div>
-		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
-												prompt: 'Please select a category') %>
+		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
 	</div>
 
 

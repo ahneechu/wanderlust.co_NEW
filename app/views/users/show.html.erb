@@ -7,20 +7,55 @@
       
 <div>Include skills activity</div>
 
-
 <div class="profile_container">
+<table class="table table-hover">
+	<tr>
+		<th>Skills</th>
+		<th>Show</th>
+		<th>Edit</th>
+		<th>Remove</th>
+	</tr>
+
 <h3>Skills I'm Teaching</h3>
-<% @user.mentors.each do |m| %>
-	<%= m.skill.skill_name %> <br />
+	<tbody>
+	<% @user.mentors.each do |m| %>
+	<tr>
+		<td><%= m.skill.skill_name %> </td>
+		<td><%= link_to 'Show', m %></td>
+		<td><%= link_to "Edit", { controller: "skills", action: "edit", id: m.skill.id}, {method: :get} %></td>
+		<td><%= link_to "delete", { controller: "skills", action: "destroy", id: m.skill.id}, 
+		{method: :delete, data:{confirm: "Are you sure?"}} %></td>
+	</tr>
 <% end %>
+
+</tbody>
+</table>
 </div>
 
 
 <div class="profile_container">
+<table class="table table-hover">
+	<tr>
+		<th>Skills</th>
+		<th>Show</th>
+		<th>Edit</th>
+		<th>Remove</th>
+	</tr>
 <h3>Skills I'm Learning</h3>
+	
+	<tbody>
+
 <% @user.learners.each do |l| %>
-	<%= l.skill.skill_name %> <br />
+	<tr>
+		<td><%= l.skill.skill_name %> </td>
+		<td><%= link_to 'Show', l %></td>
+		<td><%= link_to "Edit", { controller: "skills", action: "edit", id: l.skill.id}, {method: :get} %></td>
+		<td><%= link_to "delete", { controller: "skills", action: "destroy", id: l.skill.id}, 
+		{method: :delete, data:{confirm: "Are you sure?"}} %></td>
+	</tr>
 <% end %>
+</tbody>
+</table>
 </div>
 
 <% end %>

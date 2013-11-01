@@ -25,7 +25,7 @@
 		<td></td><td></td>	
 		<td><%=s.skill_name %></td>
 		<td><%= link_to 'Show', s %></td>
-        <td><%= link_to 'Edit', {controller: "skills", action:"update", id:s.id}, {method: :update} %></td>
+        <td><%= link_to 'Edit', {controller: "skills", action:"edit", id:s.id}, {method: :get} %></td>
         <td><%= link_to 'Delete', {controller: "skills", action:"destroy", id:s.id}, 
         {method: :delete} %></td>
         <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
