@@ -8,9 +8,9 @@
 		<tr>
 			<th colspan="2">Category</th>
 			<th>Skills</th>
-			<th>Show</th>
+			<!-- <th>Show</th>
 			<th>Edit</th>
-			<th>Remove</th>
+			<th>Remove</th> -->
 		</tr>
 
 		<% @categories.each do |c| %>
@@ -24,10 +24,10 @@
 		<tr>
 			<td></td><td></td>	
 			<td><%=s.skill_name %></td>
-			<td><%= link_to 'Show', s %></td>
-	        <td><%= link_to 'Edit', {controller: "skills", action:"edit", id:s.id}, {method: :get} %></td>
-	        <td><%= link_to 'Delete', {controller: "skills", action:"destroy", id:s.id}, 
-	        {method: :delete} %></td>
+			<!-- <td><%# link_to 'Show', s %></td>
+	        <td><%# link_to 'Edit', {controller: "skills", action:"edit", id:s.id}, {method: :get} %></td>
+	        <td><%# link_to 'Delete', {controller: "skills", action:"destroy", id:s.id}, 
+	        {method: :delete} %></td> -->
 		</tr>
 			<% end %>
 		<% end %>

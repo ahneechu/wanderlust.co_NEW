@@ -20,11 +20,14 @@
 <tr>
 	<td colspan="2"><%= link_to l.user.email, l %></td><br />
 
-		<td><%= l.skill.skill_name %></td>
+	<% l.skills.each do |s| %>
+
+		<td><%= s.skill_name %></td>
 		<td><%# link_to 'Show', s %></td>
         <td><%# link_to 'Edit', edit_skill_path(skill) %></td>
         <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
+<% end %>
 <% end %>
 
 </table>

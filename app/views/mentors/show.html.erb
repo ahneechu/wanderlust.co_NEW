@@ -1,22 +1,33 @@
-<% provide(:title, @mentor.skill.skill_name) %>
+<% provide(:title, 'Mentor Info') %>
 
 <div class= "form_container">
 
-<h3>Mentor Name</h3>
-<p><%= @mentor.user.email %></p>
+<table class="table table-hover">
 
-<h3>Skill Name</h3>
-<p><%= @mentor.skill.skill_name %></p>
+	<tr>
+		<th>Mentor Name</th>
+		<th>Notes</th>
+		<th>Skill Name</th>
+		<th>Skill Description</th>
+	</tr>
 
-<h3>Skill Description</h3>
-<p><%= @mentor.skill.skill_description %></p>
+	<tr>
 
-<h3>Mentor Notes</h3>
-<p><%= @mentor.notes %></p>
+		<td><%= @mentor.user.email %></td>
+		<td><%= @mentor.notes %></td>
 
-<p><%= link_to 'back', mentors_path %></p>
+	<% @mentor.skills.each do |ms| %>
+		<td><%= ms.skill_name %></td>
+		<td><%= ms.skill_description %></td>
+		<% end %>
+	</tr>
+</table>
+
+<br />
+<br />
+<br />
+<p><%= link_to 'Back', mentors_path %></p>
 
 </div>
-
 
 

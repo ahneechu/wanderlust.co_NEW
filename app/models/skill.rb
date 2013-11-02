@@ -12,9 +12,10 @@ class Skill
 	# 	self.category_name + ' & ' + self.skill_name
 	# end
 
-
-	has_many :learners
-	has_many :mentors
+	has_and_belongs_to_many :learners
+	has_and_belongs_to_many :mentors
+	# has_many :learners
+	# has_many :mentors
 	belongs_to :category
 
 

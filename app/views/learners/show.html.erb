@@ -1,21 +1,31 @@
-<% provide(:title, @learner.skill.skill_name) %>
+<% provide(:title, "Learner Info") %>
 
-<div class = "form_container">
-<h3>Learner Name</h3>
-<p><%= @learner.user.email %></p>
+<div class= "form_container">
 
-<h3>Skill Name</h3>
-<p><%= @learner.skill.skill_name %></p>
+<table class="table table-hover">
 
-<h3>Skill Description</h3>
-<p><%= @learner.skill.skill_description %></p>
+	<tr>
+		<th>Learner Name</th>
+		<th>Notes</th>
+		<th>Skill Name</th>
+		<th>Skill Description</th>
+	</tr>
 
-<h3>Learner Notes</h3>
-<p><%= @learner.notes %></p>
+	<tr>
 
-<p><%= link_to 'back', learners_path %></p>
+		<td><%= @learner.user.email %></td>
+		<td><%= @learner.notes %></td>
 
+	<% @learner.skills.each do |ls| %>
+		<td><%= ls.skill_name %></td>
+		<td><%= ls.skill_description %></td>
+		<% end %>
+	</tr>
+</table>
+
+<br />
+<br />
+<br />
+<p><%= link_to 'Back', learners_path %></p>
 
 </div>
-
-

@@ -3,13 +3,11 @@ class Learner #learning experience
 
 #fields to include what to learn
 field :notes, type: String
-field :objectives, type: String
-field :goals, type: String
-
 
 # has_many :agreements
 belongs_to :user
-belongs_to :skill
+# belongs_to :skill
+has_and_belongs_to_many :skills
 
 
 

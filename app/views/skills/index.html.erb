@@ -16,11 +16,12 @@
 		<tr>
 			<td><%= link_to s.skill_name, skill_path(s.id) %></td>
 
-		<% s.mentors.each do |m| %>
-			<td><%= link_to m.user.email, user_path(m.id) %></td>
+		<td><% s.mentors.each do |m| %>
+			<%= link_to m.user.email, mentors_path(id: m.id) %>
+		<% end %></td>
 			
-		<% s.learners.each do |l| %>
-			<td><%= link_to l.user.email, user_path(l.id) %></td>
+		<td><% s.learners.each do |l| %>
+			<%= link_to l.user.email, learners_path(id: l.id) %>
 			<!-- <td><%# link_to "Show", s %></td>
 			<td><%# link_to "Edit", { action: "edit", id: s.id},
 			{method: :get} %></td>
@@ -29,9 +30,9 @@
 			<!-- Not sure why the edit path below doesnt work -->
 			<!-- <td><%# link_to 'Edit', edit_skills_path(s) %></td> -->
 		
-		</tr>
-	<% end %>
-	<% end %>
+		
+	<% end %></td>
+	</tr>
 	<% end %>
 	</table>
 </div>

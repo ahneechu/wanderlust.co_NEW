@@ -19,11 +19,11 @@ class SkillsController < ApplicationController
 		@skill = Skill.create(params[:skill].permit(:skill_name, :category_id, :skill_description))
 		
 			if params[:skill][:m_or_l] == 'mentor'
-				m = @skill.mentors.new(:notes => params[:skill][:notes], :bio => params[:skill][:bio])
+				m = @skill.mentors.new(:notes => params[:skill][:notes])
 				m.user = current_user
 				m.save
 			else
-				l = @skill.learners.new(:notes => params[:skill][:notes], :objectives => params[:skill][:objectives], :goals => params[:skill][:goals])
+				l = @skill.learners.new(:notes => params[:skill][:notes])
 				l.user = current_user
 				l.save
 			end
