@@ -3,23 +3,22 @@
 <div class= "form_container">
 
 <table class="table table-hover">
-
+	
 	<tr>
-		<th>Learner Name</th>
-		<th>Notes</th>
 		<th>Skill Name</th>
 		<th>Skill Description</th>
+		<th>Learner Name</th>
+		<th>Notes</th>
 	</tr>
 
 	<tr>
-
-		<td><%= @learner.user.email %></td>
-		<td><%= @learner.notes %></td>
-
-	<% @learner.skills.each do |ls| %>
+		<% @learner.skills.each do |ls| %>
 		<td><%= ls.skill_name %></td>
 		<td><%= ls.skill_description %></td>
 		<% end %>
+
+		<td><%= @learner.user.email %></td>
+		<td><%= @learner.notes %></td>
 	</tr>
 </table>
 

@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit mentor') %>
+
+<div class="form_container">
+
+	<h1>Edit Mentor</h1>
+
+	<%= form_for :mentor do |f| %>
+		<p> 
+			<%= f.label :notes, "Notes" %><br />
+			<%= f.text_area :notes %>
+		</p>
+
+		<p>
+			<%= f.submit "Update" %>	
+		</p>
+
+	<% end %>
+
+</div>

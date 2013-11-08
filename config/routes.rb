@@ -8,14 +8,16 @@ NewProject::Application.routes.draw do
 
 
   root  'static_pages#home'
-  match '/signup',  to: 'users#new',                via: 'get'
-  match '/signin',  to: 'authentications#new',      via: 'get'
-  # match '/skills/:id/edit', to: 'skills#update',     via: 'post'
-  match '/logout',  to: 'static_pages#logout',      via: 'get'
-  match '/signout', to: 'authentications#destroy',  via: 'delete'
-  match '/help',    to: 'static_pages#help',        via: 'get'
-  match '/about',   to: 'static_pages#about',       via: 'get'
-  match '/contact', to: 'static_pages#contact',     via: 'get'
+  match '/signup',            to: 'users#new',                via: 'get'
+  match '/signin',            to: 'authentications#new',      via: 'get'
+  match '/skills/:id/edit',   to: 'skills#update',            via: 'post'
+  match '/mentors/:id/edit',  to: 'mentors#update',           via: 'post'
+  match '/learners/:id/edit', to: 'learners#update',          via: 'post'
+  match '/logout',            to: 'static_pages#logout',      via: 'get'
+  match '/signout',           to: 'authentications#destroy',  via: 'delete'
+  match '/help',              to: 'static_pages#help',        via: 'get'
+  match '/about',             to: 'static_pages#about',       via: 'get'
+  match '/contact',           to: 'static_pages#contact',     via: 'get'
   
 
 

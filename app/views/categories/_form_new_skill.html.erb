@@ -1,10 +1,4 @@
-<% provide(:title, 'New skills') %>
-
-<div class="form_container">
-
-	<h1>New Skill Form</h1>
-
-	<%= form_for @skill do |f| %>
+	<%= form_for @skill, {url: '/skills', method: 'post'} do |f| %>
 
 	<p>
 		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
@@ -21,9 +15,17 @@
 	</p>
 
 	<p>
+		<%= f.label :mentors, "I want to be a mentor"%>
+		<%= f.radio_button :m_or_l, "mentor" %>
+	</p>
+
+	<p>
+		<%= f.label :learners, "I want to be a learner"%>
+		<%= f.radio_button :m_or_l, "learner" %>
+	</p>
+
+	<p>
 		<%= f.submit %>	
 	</p>
 
 	<% end %>
-
-</div>

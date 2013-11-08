@@ -185,7 +185,7 @@ input {
 
 .form_container{
   background-color: #eee;
-  border: 1px solid gray;
+  /*border: 1px solid gray;*/
   margin: 20px auto;
   width: 900px;
   padding: 10px;
@@ -201,6 +201,14 @@ input {
   float: left;
 }
 
+.right{
+  margin-top: 30px;
+}
+
+.left{
+  margin-top: 10px;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -212,4 +220,22 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.form_circle{
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  border-color: black;
+  padding-top: 15px;
+  padding-left: 20px;
+  margin: 10px;
+}
+
+.m_circle{
+  background-color: orange; 
+}
+
+.l_circle{
+  background-color: #B4CDCD; 
 }

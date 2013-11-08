@@ -1,0 +1,26 @@
+<!-- use this one -->
+
+<%= form_tag :action => "update" do %>
+<table class="table table-hover">
+	<tr>
+		<th>Mentors</th>
+		<th>Learners</th>
+		<th>Skills</th>
+	</tr>
+
+	<% @category.skills.each do |s| %>
+		<tr>
+			<td><%= check_box_tag "m" + s.id, "Y" %></td>
+			<td><%= check_box_tag "l" + s.id, "Y" %></td>
+			<td><%= s.skill_name %></td>
+		</tr>
+	<% end %>
+</table>
+	<p>
+		<%= button_to "Submit", categories_url + "/_", method: :put %>	
+	</p>
+
+
+<% end %>
+
+</div>

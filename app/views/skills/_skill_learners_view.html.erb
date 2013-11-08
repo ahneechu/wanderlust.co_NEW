@@ -1,0 +1,39 @@
+<% provide(:title, @skill.skill_name) %>
+
+<div class = "form_container">
+
+<h1>skill learners view</h1>
+
+<table class="table table-hover">
+
+	<tr>
+		<th>Skill Name</th>
+		<th>Skill Description</th>
+		<th>Learners Name</th>
+		<th>Learners Notes</th>
+	</tr>
+	<tr>
+		<td><%= @skill.skill_name %></td>
+		<td><%= @skill.skill_description %></td>
+	</tr>
+
+		<% @skill.learners.each do |lm| %>
+	<tr>
+	<td></td><td></td>
+			<td><%= lm.user.email %>
+			</td>
+
+			<td><%= lm.notes %>
+			</td>
+	</tr>
+		<% end %>
+	
+</table>	
+
+
+
+<br />
+<br />
+<br />
+<p><%= link_to 'Back', skills_path %></p>
+</div>

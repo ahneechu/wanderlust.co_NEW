@@ -15,13 +15,15 @@
 	<% @skills.each do |s| %>
 		<tr>
 			<td><%= link_to s.skill_name, skill_path(s.id) %></td>
+			<td><div class="form_circle m_circle"><%= link_to s.mentors.count, skill_path(s, view: "mentors") %></div></td>
+			<td><div class="form_circle l_circle"><%= link_to s.learners.count, skill_path(s, view: "learners") %></div></td>
 
-		<td><% s.mentors.each do |m| %>
-			<%= link_to m.user.email, mentors_path(id: m.id) %>
-		<% end %></td>
+		<td><%#s.mentors.each do |m| %>
+			<%# link_to m.user.email, mentors_path(id: m.id) %>
+		<%#end %></td>
 			
-		<td><% s.learners.each do |l| %>
-			<%= link_to l.user.email, learners_path(id: l.id) %>
+		<td><%#s.learners.each do |l| %>
+			<%# link_to l.user.email, learners_path(id: l.id) %>
 			<!-- <td><%# link_to "Show", s %></td>
 			<td><%# link_to "Edit", { action: "edit", id: s.id},
 			{method: :get} %></td>
@@ -31,7 +33,7 @@
 			<!-- <td><%# link_to 'Edit', edit_skills_path(s) %></td> -->
 		
 		
-	<% end %></td>
+	<%#end %></td>
 	</tr>
 	<% end %>
 	</table>

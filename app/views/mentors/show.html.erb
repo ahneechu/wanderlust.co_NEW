@@ -5,21 +5,21 @@
 <table class="table table-hover">
 
 	<tr>
-		<th>Mentor Name</th>
-		<th>Notes</th>
 		<th>Skill Name</th>
 		<th>Skill Description</th>
+		<th>Mentor Name</th>
+		<th>Notes</th>
 	</tr>
 
 	<tr>
-
-		<td><%= @mentor.user.email %></td>
-		<td><%= @mentor.notes %></td>
 
 	<% @mentor.skills.each do |ms| %>
 		<td><%= ms.skill_name %></td>
 		<td><%= ms.skill_description %></td>
 		<% end %>
+
+		<td><%= @mentor.user.email %></td>
+		<td><%= @mentor.notes %></td>
 	</tr>
 </table>
 

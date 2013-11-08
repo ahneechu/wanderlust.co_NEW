@@ -13,27 +13,43 @@
 	</div> -->
 
 
-<table class="table table-hover">
+<!-- <table class="table table-hover">
 	<tr>
+		<th></th>
 		<th>Skills</th>
 		<th>Show</th>
 		<th>Edit</th>
 		<th>Remove</th>
-	</tr>
+	</tr> -->
+
+	
+	<%= render 'categories/checkboxes.html.erb' %>
+<%# form_for @skill, {url: '/skills', method: 'post'} do |f| %>
+
+	<!-- <p> -->
+		<%# collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
+	<!-- </p> -->
 
 
-<% @category.skills.each do |s| %>
-	<tr>
-		<td><%= s.skill_name %></td>
+
+<%#@category.skills.each do |s| %>
+	<!-- <tr> -->
+		<!-- <td><%# check_box_tag "skill[category_ids][]", s.id %></td> -->
+		<!-- <td><%# s.skill_name %></td> -->
+
 		<!-- i still need to link edit btn with edit html -->
-		<td><%= link_to 'Show', s %></td>
-		<td><%= link_to "Edit", { controller: "skills", action: "edit", id: s.id}, {method: :edit} %></td>
-		<td><%= link_to "delete", { controller: "skills", action: "destroy", id: s.id}, 
+		<td><%# link_to 'Show', s %></td>
+		<td><%# link_to "Edit", { controller: "skills", action: "edit", id: s.id}, {method: :edit} %></td>
+		<td><%# link_to "delete", { controller: "skills", action: "destroy", id: s.id}, 
 			{method: :delete, data:{confirm: "Are you sure?"}} %></td>
 		<!-- <td><%# link_to 'Edit', edit_skill_path %></td> -->
 	</tr>
+	<p>
+		<!-- this needs to update the skill -->
+		<%# s.submit "Update" %>	
+	</p>
 
-	<% end %>
+	<%#end %>
 
 	</tbody>
 </table>
@@ -45,38 +61,40 @@
 
 	<h1>New Skill Form</h1>
 
-	<%= form_for @skill, {url: '/skills', method: 'post'} do |f| %>
+	<%= render 'categories/form_new_skill' %> 
 
-	<p>
-		<%=collection_select(:skill, :category_id, Category.all, :id, :category_name, 
-												prompt: 'Please select a category') %>
+	<%# form_for @skill, {url: '/skills', method: 'post'} do |f| %>
+
+
+	<!-- <p>
+		<%#collection_select(:skill, :category_id, Category.all, :id, :category_name, prompt: 'Please select a category') %>
 	</p>
 
 	<p>
-		<%= f.label :skill_name, "Skill" %><br />
-		<%= f.text_field :skill_name %>
+		<%# f.label :skill_name, "Skill" %><br />
+		<%# f.text_field :skill_name %>
 	</p>
 
 	<p>
-		<%= f.label :skill_description, "Skill Description" %><br />
-		<%= f.text_area :skill_description %>
-	</p>
+		<%# f.label :skill_description, "Skill Description" %><br />
+		<%# f.text_area :skill_description %>
+	</p>-->
+
+	<!-- <p>
+		<%# f.label :mentors, "I want to be a mentor"%>
+		<%# f.radio_button :m_or_l, "mentor" %>
+	</p> 
 
 	<p>
-		<%= f.label :mentors, "I want to be a mentor"%>
-		<%= f.radio_button :m_or_l, "mentor" %>
-	</p>
+		<%# f.label :learners, "I want to be a learner"%>
+		<%# f.radio_button :m_or_l, "learner" %>
+	</p> 
 
 	<p>
-		<%= f.label :learners, "I want to be a learner"%>
-		<%= f.radio_button :m_or_l, "learner" %>
+		<%# f.submit %>	
 	</p>
 
-	<p>
-		<%= f.submit %>	
-	</p>
-
-	<% end %>
+	<%#end %> -->
 
 	<p><%= link_to 'back', categories_path %></p>
 

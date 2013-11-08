@@ -1,0 +1,32 @@
+<!-- <div class= "form_container">
+
+<table class="table table-hover"> -->
+<!-- this didnt work -->
+	<tr>
+		<th>Skill Name</th>
+		<th>Skill Description</th>
+		<th>Mentors Name</th>
+		<th>Learners Name</th>
+	</tr>
+	<tr>
+	<% @skills.each do |s| %>
+		<td><%= s.skill_name %></td>
+		<td><%= s.skill_description %><% end %></td>
+
+	<% @skill.mentors.each do |sm| %>
+		<td><%= sm.user.email %>
+		<% end %></td>
+
+	<% @skill.learners.each do |lm| %>
+		<td><%= lm.user.email %>
+		<% end %></td>
+	</tr>
+
+<br />
+<br />
+<br />
+<p><%= link_to 'Back', current_user_path %></p>
+
+</div>
+
+
