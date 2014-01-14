@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
 	@user = User.create(params[:user].permit(:name, :email, :password, :password_confirmation))
+  @user.save
 
   user = User.find_by(email: params[:user][:email])
 	 if user.authenticate(params[:user][:password])

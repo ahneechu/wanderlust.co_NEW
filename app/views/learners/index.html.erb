@@ -8,8 +8,9 @@
 <table class="table table-hover">
 
 <tr>
-	<th colspan="2">Learners</th>
-	<th>Skills</th>
+	<th colspan="2">LEARNERS</th>
+	<th>SKILL NAME</th>
+	<th>SKILL DESCRIPTION</th>
 	<!-- <th>Show</th>
 	<th>Edit</th>
 	<th>Remove</th> -->
@@ -23,6 +24,7 @@
 	<% l.skills.each do |s| %>
 
 		<td><%= s.skill_name %></td>
+		<td><%= s.skill_description %></td>
 		<td><%# link_to 'Show', s %></td>
         <td><%# link_to 'Edit', edit_skill_path(skill) %></td>
         <td><%# link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>

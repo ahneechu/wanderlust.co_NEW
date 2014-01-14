@@ -8,7 +8,7 @@ NewProject::Application.routes.draw do
 
 
   root  'static_pages#home'
-  match '/signup',            to: 'users#new',                via: 'get'
+  # match '/signup',            to: 'users#new',                via: 'get'
   match '/signin',            to: 'authentications#new',      via: 'get'
   match '/skills/:id/edit',   to: 'skills#update',            via: 'post'
   match '/mentors/:id/edit',  to: 'mentors#update',           via: 'post'

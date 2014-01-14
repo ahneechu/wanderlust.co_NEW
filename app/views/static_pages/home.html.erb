@@ -1,17 +1,19 @@
 <div class="jumbotron">
   <!-- <h1>Welcome to Wanderlust</h1> -->
 
-  <h1>
-    <a href="/categories">Share a skill or learn a skill</a>
-    
-  </h1>
+  <h1><a href="/categories">Share a skill or learn a skill</a></h1>
 
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
+  <div class="signup_container">
+  <h2>Sign up Now!</h2>
+  <%= render 'users/form' %>
+  </div>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <!-- <br />
+  <br />
+  <br />
+  <br />
+  <br /> -->
+
+  <%# link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 

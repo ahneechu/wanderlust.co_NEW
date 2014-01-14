@@ -27,6 +27,7 @@ class CategoriesController < ApplicationController
 						m = s.mentors.new
 						m.user = current_user
 						m.save
+						redirect_to mentor_path
 					end
 				elsif key[0]=="l"
 					if s.id.to_s ==key[1..key.length-1]
